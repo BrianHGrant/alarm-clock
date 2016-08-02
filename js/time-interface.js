@@ -17,6 +17,11 @@ $(document).ready(function(){
     currentAlarm = new Alarm(alarmTime);
     setInterval(alarmCheck, 1000, currentAlarm.time);
   });
+
+  $('#snooze').click(function(){
+    currentAlarm.time = moment.tz($('#zone-select').val()).add(5, 'm').format('HH:mm a');
+    $('#alarm-buzz').hide();
+  });
 });
 
 
@@ -26,17 +31,11 @@ function refreshTime(){
   $('#time').text(currentTime);
 }
 
-// if (currentTime === alarmTime.time){
-//   alert
-// }
-
 function alarmCheck(alarm) {
-  console.log(alarm);
   var currentTime = moment.tz($('#zone-select').val()).format('HH:mm a');
-  console.log(currentTime);
   if (alarm === currentTime) {
-    $('img').show();
+    $('#alarm-buzz').show();
   } else {
-    $('img').hide();
+    $('#alarm-buzz').hide();
   }
 }
