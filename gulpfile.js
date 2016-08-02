@@ -17,6 +17,7 @@ var lib = require('bower-files')({
 });
 var del = require('del');
 var jshint = require('gulp-jshint');
+var browserSync = require('browser-sync').create();
 
 var buildProduction = utilities.env.production;
 
@@ -79,6 +80,14 @@ gulp.task('build', ['clean'], function(){
   gulp.start('bower');
 });
 
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  })
+});
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])

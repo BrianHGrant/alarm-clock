@@ -1,0 +1,14 @@
+.jumbotron {
+  margin: 1em;
+}
+
+.jumbotron h1 {
+  text-align: center;
+}
+
+
+#clock-space {
+  text-align: center;
+  padding: 1em;
+  border: 2px solid black;
+}

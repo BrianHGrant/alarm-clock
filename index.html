@@ -3,24 +3,31 @@
   <head>
     <title>Alarm Clock</title>
     <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+
   </head>
   <body>
     <div class="jumbotron">
-      <h2>Alarm Clock</h2>
+      <h1>Alarm Clock</h1>
     </div>
-    <h3>Well look at the time! </h3>
-    <h3 id="time"></h3>
-    <form class="time-zone">
-      <select id='zone-select' name="select your time zone">
-        <option value="Pacific/Honolulu">Hawaii</option>
-        <option value="America/Anchorage">Alaska</option>
-        <option value="America/Los_Angeles">Portland</option>
-        <option value="US/Mountain">Denver</option>
-      </select>
-      <button type="submit" name="button">Change Time Zone</button>
-    </form>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-4" id="clock-space">
+        <h3>Well look at the time! </h3>
+        <h3 id="time"></h3>
+        <form class="time-zone">
+          <select id='zone-select' name="select your time zone">
+            <option value="Pacific/Honolulu">Hawaii</option>
+            <option value="America/Anchorage">Alaska</option>
+            <option value="America/Los_Angeles">Portland</option>
+            <option value="US/Mountain">Denver</option>
+          </select>
+          <button type="submit" name="button">Change Time Zone</button>
+        </form>
+      </div>
+    </div>
+
 
   </body>
 </html>
